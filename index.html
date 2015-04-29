@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Adam's Github Pages</title>
-</head>
-<body>
-  <h1>Body</h1>
-  <p>Here are the contents of the body</p>
-</body>
+	<head>
+		
+	</head>
+	<body>
+		<canvas id="game"></canvas>
+		
+		<script type="application/javascript" src="lib/helpers.js"></script>
+		<script type="application/javascript" src="lib/moveable.js"></script>
+		<script type="application/javascript" src="lib/controls.js"></script>
+		<script type="application/javascript" src="lib/asteroid.js"></script>
+		<script type="application/javascript" src="lib/bullet.js"></script>
+		<script type="application/javascript" src="lib/ship.js"></script>
+		<script type="application/javascript" src="lib/game.js"></script>
+		<script type="application/javascript" src="lib/game_view.js"></script>
+
+		<script type="application/javascript">
+      (function () {
+        var canvas = document.getElementById("game");
+        canvas.width = Relativity.GameView.WIDTH;
+        canvas.height = Relativity.GameView.HEIGHT;
+
+        var ctx = canvas.getContext("2d");
+        var game = new Relativity.Game({ width: Relativity.GameView.WIDTH, height: Relativity.GameView.HEIGHT });
+        new Relativity.GameView(game, ctx).start();
+      })();
+    </script>
+	</body>
 </html>
